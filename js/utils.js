@@ -21,7 +21,7 @@ function getDateStr(time) {
 }
 
 function getFileName() {
-  return 'ptnkchatible_backup_' + getDateStr(-1).replace(/\//g, '-').replace(/\:/g, '-').replace(/\s+/, '_') + '.json';
+  return 'hcmuschat_backup_' + getDateStr(-1).replace(/\//g, '-').replace(/\:/g, '-').replace(/\s+/, '_') + '.json';
 }
 
 function download(filename, text) {
@@ -127,18 +127,18 @@ function checkInfo() {
         if (data.errortype === 'auth') {
           redirectToLogin();
         } else {
-          $('#ptnkinfo').html(`Couldn't get info for user ${id}`);
+          $('#hcmusinfo').html(`Couldn't get info for user ${id}`);
         }
         return;
       }
 
       data = data.userProfile;
 
-      $('#ptnkinfo').html(`<b>ID: ${id}</><br>${data.name} (<i>${data.gender == 'male' ? 'Nam' : 'Nữ'}</i>)<br>
+      $('#hcmusinfo').html(`<b>ID: ${id}</><br>${data.name} (<i>${data.gender == 'male' ? 'Nam' : 'Nữ'}</i>)<br>
                           <img src="${data.profile_pic}" width="100px"/><br>`);
     },
     function (xhr, ajaxOptions, thrownError) {
-      $('#ptnkinfo').text(thrownError);
+      $('#hcmusinfo').text(thrownError);
     }
   );
 }
