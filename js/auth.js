@@ -1,4 +1,4 @@
-var host = 'https://hcmuschat.herokuapp.com';
+var host = 'https://lebaohiep.com/hcmuschat';
 setAppUrl(host);
 
 if (getAppToken() !== null) {
